@@ -85,18 +85,18 @@ function enviarFormulario() {
     return;
   }
 
+  // BUG CORRIGIDO: espaço/tab extra removido antes de %0AQuero
   const texto =
     `Olá, Body Fitness! 😊%0A` +
     `Meu nome é *${encodeURIComponent(nome)}*%0A` +
     `Telefone: ${encodeURIComponent(tel)}%0A` +
     `Objetivo: ${encodeURIComponent(objetivo || 'Não informado')}%0A` +
     (msg ? `Mensagem: ${encodeURIComponent(msg)}%0A` : '') +
-    `%0AGostaria de agendar minha aula experimental GRÁTIS! 🎁`;
+    `%0AQuero saber mais sobre a Body Fitness!`;
 
   window.open(`https://wa.me/5544998716167?text=${texto}`, '_blank');
 }
 
-// Expor para uso inline nos botões HTML
 window.enviarFormulario = enviarFormulario;
 
 /* ─── COMPARTILHAR ─── */

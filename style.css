@@ -2,7 +2,6 @@
    Body Fitness Academia Feminina — style.css
    ═══════════════════════════════════════════ */
 
-/* ─── VARIÁVEIS ─── */
 :root {
   --plum: #6B2D5E;
   --rose: #E8527A;
@@ -17,7 +16,6 @@
   --gradient-soft: linear-gradient(160deg, #FCE8EF 0%, #FFF8F9 50%, #F4E6F1 100%);
 }
 
-/* ─── RESET ─── */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 html { scroll-behavior: smooth; }
 body {
@@ -52,13 +50,6 @@ nav.scrolled { box-shadow: 0 4px 32px rgba(107,45,94,0.12); }
   transition: color 0.2s;
 }
 .nav-links a:hover { color: var(--rose); }
-.nav-cta {
-  background: var(--gradient); color: white; border: none;
-  padding: 0.65rem 1.5rem; border-radius: 50px; font-size: 0.85rem;
-  font-weight: 600; cursor: pointer; text-decoration: none;
-  white-space: nowrap; transition: transform 0.2s, box-shadow 0.2s;
-}
-.nav-cta:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(232,82,122,0.4); }
 
 /* ─── HERO ─── */
 #hero {
@@ -86,14 +77,6 @@ nav.scrolled { box-shadow: 0 4px 32px rgba(107,45,94,0.12); }
   pointer-events: none;
 }
 .hero-text { z-index: 1; animation: fadeUp 0.9s ease both; }
-.hero-badge {
-  display: inline-flex; align-items: center; gap: 0.5rem;
-  background: white; border: 1.5px solid rgba(232,82,122,0.3);
-  border-radius: 50px; padding: 0.45rem 1.1rem;
-  font-size: 0.8rem; font-weight: 600; color: var(--rose);
-  letter-spacing: 0.06em; text-transform: uppercase;
-  margin-bottom: 1.6rem; box-shadow: 0 4px 16px rgba(232,82,122,0.1);
-}
 .hero-title {
   font-family: 'Playfair Display', serif;
   font-size: clamp(2.4rem, 4.5vw, 4rem);
@@ -123,7 +106,6 @@ nav.scrolled { box-shadow: 0 4px 32px rgba(107,45,94,0.12); }
   font-size: 1rem; font-weight: 700; text-decoration: none;
   box-shadow: 0 8px 32px rgba(232,82,122,0.4);
   transition: transform 0.25s, box-shadow 0.25s;
-  animation: fadeUp 1s 0.2s ease both;
 }
 .btn-primary:hover { transform: translateY(-3px); box-shadow: 0 16px 40px rgba(232,82,122,0.5); }
 .btn-secondary {
@@ -158,8 +140,7 @@ nav.scrolled { box-shadow: 0 4px 32px rgba(107,45,94,0.12); }
   display: flex; flex-direction: column;
   align-items: center; justify-content: center; gap: 1rem;
   color: rgba(255,255,255,0.9);
-  padding: 2rem; text-align: center;
-  position: absolute;
+  padding: 2rem; text-align: center; position: absolute;
 }
 .hero-image-placeholder .icon { font-size: 5rem; line-height: 1; }
 .hero-image-placeholder p { font-size: 1.1rem; font-weight: 500; opacity: 0.85; }
@@ -224,8 +205,7 @@ section { padding: 100px 5%; }
 .highlight-item {
   display: flex; align-items: flex-start; gap: 1rem;
   padding: 1.2rem; border-radius: 16px;
-  background: var(--soft-pink);
-  transition: transform 0.2s;
+  background: var(--soft-pink); transition: transform 0.2s;
 }
 .highlight-item:hover { transform: translateX(4px); }
 .highlight-icon {
@@ -253,8 +233,7 @@ section { padding: 100px 5%; }
   background: rgba(255,255,255,0.1);
   backdrop-filter: blur(12px);
   border: 1px solid rgba(255,255,255,0.18);
-  border-radius: 28px; padding: 2.4rem;
-  color: white;
+  border-radius: 28px; padding: 2.4rem; color: white;
   transition: transform 0.3s, background 0.3s;
   position: relative; overflow: hidden;
 }
@@ -280,8 +259,7 @@ section { padding: 100px 5%; }
   display: flex; align-items: center; gap: 3rem;
   background: white; border-radius: 28px;
   padding: 2.5rem 3rem; margin-bottom: 3.5rem;
-  box-shadow: 0 8px 40px rgba(107,45,94,0.08);
-  flex-wrap: wrap;
+  box-shadow: 0 8px 40px rgba(107,45,94,0.08); flex-wrap: wrap;
 }
 .rating-big { text-align: center; }
 .rating-number { font-family: 'Playfair Display', serif; font-size: 5rem; font-weight: 900; color: var(--plum); line-height: 1; }
@@ -330,8 +308,7 @@ section { padding: 100px 5%; }
   border: 2px solid rgba(107,45,94,0.2);
   background: white; cursor: pointer;
   display: flex; align-items: center; justify-content: center;
-  font-size: 1.2rem; color: var(--plum);
-  transition: all 0.2s;
+  font-size: 1.2rem; color: var(--plum); transition: all 0.2s;
 }
 .slider-btn:hover { background: var(--plum); color: white; border-color: var(--plum); }
 .slider-dots { display: flex; gap: 8px; }
@@ -340,31 +317,42 @@ section { padding: 100px 5%; }
 
 /* ─── GALERIA ─── */
 #galeria { background: white; }
-.galeria-grid {
-  display: grid;
-  grid-template-columns: 2fr 1fr 1fr;
-  grid-template-rows: 260px 260px;
-  gap: 16px; margin-top: 3rem;
+
+.galeria-unica {
+  margin-top: 3rem;
+  display: flex;
+  justify-content: center;
 }
-.galeria-item {
-  border-radius: 20px; overflow: hidden;
-  background: var(--gradient-soft);
-  display: flex; align-items: center; justify-content: center;
-  font-size: 3rem; position: relative;
-  cursor: pointer; transition: transform 0.3s;
+
+.galeria-foto {
+  position: relative;
+  width: 100%;
+  max-width: 860px;
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: 0 16px 60px rgba(107,45,94,0.15);
+  cursor: pointer;
+  transition: transform 0.3s;
 }
-.galeria-item:hover { transform: scale(0.98); }
-.galeria-item:first-child { grid-row: 1 / 3; }
-.galeria-item .galeria-emoji { transition: transform 0.4s; }
-.galeria-item:hover .galeria-emoji { transform: scale(1.1); }
-.galeria-label {
+
+.galeria-foto:hover { transform: scale(0.99); }
+
+.galeria-foto img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.galeria-foto .galeria-label {
   position: absolute; bottom: 0; left: 0; right: 0;
   background: linear-gradient(transparent, rgba(107,45,94,0.75));
-  color: white; padding: 1.5rem 1.2rem 1.2rem;
-  font-size: 0.85rem; font-weight: 600;
+  color: white; padding: 2rem 1.5rem 1.4rem;
+  font-size: 1rem; font-weight: 600;
   transform: translateY(100%); transition: transform 0.3s;
 }
-.galeria-item:hover .galeria-label { transform: translateY(0); }
+
+.galeria-foto:hover .galeria-label { transform: translateY(0); }
 
 /* ─── CONTATO ─── */
 #contato {
@@ -380,15 +368,13 @@ section { padding: 100px 5%; }
 .contact-item {
   display: flex; align-items: flex-start; gap: 1rem;
   padding: 1.2rem 1.4rem; background: white; border-radius: 16px;
-  box-shadow: 0 4px 16px rgba(107,45,94,0.06);
-  transition: transform 0.2s;
+  box-shadow: 0 4px 16px rgba(107,45,94,0.06); transition: transform 0.2s;
 }
 .contact-item:hover { transform: translateX(4px); }
 .contact-item-icon {
   font-size: 1.4rem; width: 44px; height: 44px;
   background: var(--soft-pink); border-radius: 12px;
-  display: flex; align-items: center; justify-content: center;
-  flex-shrink: 0;
+  display: flex; align-items: center; justify-content: center; flex-shrink: 0;
 }
 .contact-item-label { font-size: 0.75rem; text-transform: uppercase; color: var(--text-light); letter-spacing: 0.08em; font-weight: 600; }
 .contact-item-value { font-size: 0.95rem; font-weight: 600; color: var(--text); margin-top: 0.15rem; }
@@ -427,36 +413,46 @@ section { padding: 100px 5%; }
   border: 2px solid rgba(107,45,94,0.12); border-radius: 12px;
   font-family: 'DM Sans', sans-serif; font-size: 0.95rem;
   color: var(--text); background: var(--cream);
-  transition: border-color 0.2s, background 0.2s;
-  outline: none;
+  transition: border-color 0.2s, background 0.2s; outline: none;
 }
 .form-group input:focus,
 .form-group select:focus,
 .form-group textarea:focus { border-color: var(--rose); background: white; }
 .form-group textarea { height: 100px; resize: vertical; }
+
+/* ─── BOTÕES DO FORMULÁRIO LADO A LADO ─── */
+.form-actions {
+  display: flex;
+  gap: 0.75rem;
+  margin-top: 0.5rem;
+}
+
 .form-submit {
-  width: 100%; padding: 1.1rem;
+  flex: 1;
+  padding: 1.1rem;
   background: var(--gradient); color: white; border: none;
-  border-radius: 50px; font-size: 1rem; font-weight: 700;
+  border-radius: 50px; font-size: 0.95rem; font-weight: 700;
   cursor: pointer; letter-spacing: 0.02em;
   transition: transform 0.2s, box-shadow 0.2s;
+  font-family: 'DM Sans', sans-serif;
 }
 .form-submit:hover { transform: translateY(-2px); box-shadow: 0 10px 30px rgba(232,82,122,0.4); }
-.form-note { text-align: center; font-size: 0.78rem; color: var(--text-light); margin-top: 1rem; }
 
-/* ─── PROXIMIDADES ─── */
-#proximidades { background: white; }
-.nearby-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; margin-top: 3rem; max-width: 700px; }
-.nearby-card {
-  border-radius: 20px; padding: 1.8rem;
-  background: var(--soft-pink); transition: transform 0.2s;
-  display: flex; align-items: flex-start; gap: 1rem;
+.form-insta {
+  display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem;
+  padding: 1.1rem 1.4rem;
+  background: linear-gradient(135deg, #833ab4 0%, #fd1d1d 50%, #fcb045 100%);
+  color: white; border-radius: 50px;
+  font-size: 0.95rem; font-weight: 700; text-decoration: none;
+  white-space: nowrap;
+  transition: transform 0.2s, box-shadow 0.2s;
 }
-.nearby-card:hover { transform: translateY(-4px); }
-.nearby-icon { font-size: 2.5rem; flex-shrink: 0; }
-.nearby-name { font-weight: 700; color: var(--plum); font-size: 1rem; margin-bottom: 0.3rem; }
-.nearby-rating { color: #FFB800; font-size: 0.85rem; }
-.nearby-type { font-size: 0.8rem; color: var(--text-light); }
+.form-insta:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px rgba(131,58,180,0.4);
+}
+
+.form-note { text-align: center; font-size: 0.78rem; color: var(--text-light); margin-top: 1rem; }
 
 /* ─── FOOTER ─── */
 footer {
@@ -486,8 +482,6 @@ footer {
   flex-wrap: wrap; gap: 1rem;
 }
 .footer-bottom p { font-size: 0.82rem; }
-.footer-cta a { color: var(--blush); text-decoration: none; font-size: 0.82rem; font-weight: 600; transition: color 0.2s; }
-.footer-cta a:hover { color: var(--rose); }
 
 /* ─── BOTÃO FLUTUANTE WHATSAPP ─── */
 .float-wa {
@@ -536,19 +530,16 @@ footer {
   .sobre-visual { max-width: 500px; margin: 0 auto; }
   .servicos-grid { grid-template-columns: 1fr; }
   .footer-grid { grid-template-columns: 1fr; gap: 32px; }
-  .galeria-grid { grid-template-columns: 1fr 1fr; grid-template-rows: auto; }
-  .galeria-item:first-child { grid-column: 1 / -1; grid-row: auto; aspect-ratio: 16/7; }
   .rating-summary { flex-direction: column; padding: 2rem; text-align: center; }
   .rating-bars { width: 100%; }
   nav { padding: 1rem 1.2rem; }
   .nav-links { display: none; }
   section { padding: 70px 5%; }
-  .nearby-grid { grid-template-columns: 1fr; max-width: 100%; }
 }
 @media (max-width: 600px) {
-  .galeria-grid { grid-template-columns: 1fr; }
-  .galeria-item:first-child { grid-column: 1; aspect-ratio: 4/3; }
   .contact-form { padding: 2rem 1.5rem; }
   .reviews-track { scroll-snap-type: x mandatory; overflow-x: auto; }
   .review-card { min-width: 280px; scroll-snap-align: start; }
+  .form-actions { flex-direction: column; }
+  .form-insta { justify-content: center; }
 }
